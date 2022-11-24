@@ -1,170 +1,128 @@
 [
   {
-    "category_id": "05",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
+    "category_id": "03",
+    "picture": "https://i.ibb.co/Zh4FzMT/Apple-i-Phone-XS-Max.png",
+    "name": "Apple iPhone XS Max",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "300",
+    "original_price": "700",
+    "years_of_use": "1/Year",
+    "time": "20-20-2022",
     "author": {
-      "saler_name": "",
-      "verified": ""
-    }
-  },
-  {
-    "category_id": "05",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
-    "author": {
-      "saler_name": "",
-      "verified": ""
-    }
-  },
-  {
-    "category_id": "04",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
-    "author": {
-      "saler_name": "",
-      "verified": ""
-    }
-  },
-  {
-    "category_id": "04",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
-    "author": {
-      "saler_name": "",
-      "verified": ""
-    }
-  },
-  {
-    "category_id": "06",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
-    "author": {
-      "saler_name": "",
-      "verified": ""
-    }
-  },
-  {
-    "category_id": "06",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
-    "author": {
-      "saler_name": "",
-      "verified": ""
+      "saler_name": "Rakib",
+      "verified": "true"
     }
   },
   {
     "category_id": "03",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
+    "picture": "https://i.ibb.co/Jz1V7kW/Apple-i-Phone-11-Pro-Max.png",
+    "name": "Apple iPhone 11 Pro Max",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "400",
+    "original_price": "600",
+    "years_of_use": "1/year",
+    "time": "20-22-2022",
     "author": {
-      "saler_name": "",
-      "verified": ""
+      "saler_name": "rakib",
+      "verified": "false"
     }
   },
   {
     "category_id": "03",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
+    "picture": "https://i.ibb.co/M1ZN8KD/i-Phone-12-Pro.png",
+    "name": "iPhone 12 Pro",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "400",
+    "original_price": "600",
+    "years_of_use": "1/year",
+    "time": "20-22-2022",
     "author": {
-      "saler_name": "",
-      "verified": ""
+      "saler_name": "rakib",
+      "verified": "false"
     }
   },
   {
     "category_id": "02",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
+    "picture": "https://i.ibb.co/GWCtR14/Samsung-Galaxy-A70.png",
+    "name": "Samsung Galaxy A70",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "400",
+    "original_price": "600",
+    "years_of_use": "1/year",
+    "time": "20-22-2022",
     "author": {
-      "saler_name": "",
-      "verified": ""
+      "saler_name": "rakib",
+      "verified": "false"
     }
   },
   {
     "category_id": "02",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
+    "picture": "https://i.ibb.co/qsX93Ny/Samsung-Galaxy-Note10-Lite.png",
+    "name": "Samsung Galaxy Note10 Lite",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "400",
+    "original_price": "600",
+    "years_of_use": "1/year",
+    "time": "20-22-2022",
     "author": {
-      "saler_name": "",
-      "verified": ""
+      "saler_name": "rakib",
+      "verified": "false"
+    }
+  },
+  {
+    "category_id": "02",
+    "picture": "https://i.ibb.co/Lgsm5vM/Samsung-Galaxy-A32.png",
+    "name": "Samsung Galaxy A32",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "400",
+    "original_price": "600",
+    "years_of_use": "1/year",
+    "time": "20-22-2022",
+    "author": {
+      "saler_name": "rakib",
+      "verified": "false"
     }
   },
   {
     "category_id": "01",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
+    "picture": "https://i.ibb.co/NKKynNG/Redmi-7.png",
+    "name": "Redmi 7",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "400",
+    "original_price": "600",
+    "years_of_use": "1/year",
+    "time": "20-22-2022",
     "author": {
-      "saler_name": "",
-      "verified": ""
+      "saler_name": "rakib",
+      "verified": "false"
     }
   },
   {
     "category_id": "01",
-    "picture": "",
-    "name": "",
-    "location": "",
-    "resale_price": "",
-    "original_price": "",
-    "years_of_use": "",
-    "time": "",
+    "picture": "https://i.ibb.co/xg3Wkqx/Mi-Note-10-Pro.png",
+    "name": "Mi Note 10 Pro",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "400",
+    "original_price": "600",
+    "years_of_use": "1/year",
+    "time": "20-22-2022",
     "author": {
-      "saler_name": "",
-      "verified": ""
+      "saler_name": "rakib",
+      "verified": "false"
+    }
+  },
+  {
+    "category_id": "01",
+    "picture": "https://i.ibb.co/rsCc4nm/Redmi-Note-7-Pro.png",
+    "name": "Redmi Note 7 Pro",
+    "location": "Dhaka,Bangladesh",
+    "resale_price": "400",
+    "original_price": "600",
+    "years_of_use": "1/year",
+    "time": "20-22-2022",
+    "author": {
+      "saler_name": "rakib",
+      "verified": "false"
     }
   }
 ]

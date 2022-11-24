@@ -1,14 +1,17 @@
 [
     {
         "name": "SAMSUNG",
+        "c_id":"01",
         "img":"https://i.ibb.co/4YydMDZ/samsung-logo.png"
       },
       {
         "name": "IPHONE",
+        "c_id":"02",
         "img" :"https://i.ibb.co/TYydp59/iphone-logo.png"
       },
       {
         "name": "XIAOMI",
+        "c_id":"03",
         "img":"https://i.ibb.co/gFpKz68/xiaomi-logo.png"
       }
 ]

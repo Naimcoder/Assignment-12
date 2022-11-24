@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import {  Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
 import signup from "../../../image/login.gif";
 import SmallSpnner from "../SmallSpnner/SmallSpnner";
 
 const Register = () => {
-  const { createUser, updateName, user, loader, setLoader } =
+  const { createUser, updateName, user, loader, setLoader, signInWithGoogle} =
     useContext(AuthContext);
   const {
     register,
@@ -38,6 +38,14 @@ const Register = () => {
       });
   };
 
+  const handleGoogle=()=>{
+    signInWithGoogle()
+    .then(()=>{
+      navigate("/");
+    })
+    .catch(error=>console.log(error))
+  }
+
   const saveUser=(name,email,selects)=>{
     const user= {name,email,selects}
     fetch(`http://localhost:8000/users`,{
@@ -54,7 +62,7 @@ const Register = () => {
     })
   }
   return (
-    <div className="flex container mx-auto mt-14">
+    <div className="lg:flex container mx-auto mt-14">
       <div className="mt-6">
         <img src={signup} alt="" />
       </div>
@@ -156,6 +164,7 @@ const Register = () => {
         </p>
         <div>
           <button
+           onClick={handleGoogle}
             type="button"
             class="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-medium text-white transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
           >

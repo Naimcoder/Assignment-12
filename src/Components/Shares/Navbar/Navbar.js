@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../image/logo2.png";
 import { AuthContext } from "../../../Context/UseContext";
 import toast from "react-hot-toast";
+import { FaUser } from "react-icons/fa";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
  const {user,logOut}=useContext(AuthContext)
@@ -43,7 +44,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/categories"
+              to="/categorys"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               product Categories
@@ -52,7 +53,7 @@ const Navbar = () => {
           {user?.uid ? <>
           <li>
             <Link
-              to="/deshboard"
+              to="/dashboard"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Deshboard
@@ -74,9 +75,9 @@ const Navbar = () => {
               LogOut
             </button>
           </li>
-          {/* <li>
-            <img src={user?.img} alt="" />
-          </li> */}
+          <li>
+            {user?.displayName}
+          </li>
           </>:<>
           <li>
             <Link
@@ -87,8 +88,8 @@ const Navbar = () => {
             </Link>
           </li>
           </>
-
           }
+          {user?.uid ? <><img src={user?.photoURL} alt="" /></>:<FaUser></FaUser>}
         </ul>
         <div className="lg:hidden">
           <button
@@ -167,7 +168,8 @@ const Navbar = () => {
                         product Categories
                       </Link>
                     </li>
-                    <li>
+                    {user?.uid ? <>
+                      <li>
                       <Link
                         to="/dashboard"
                         aria-label="About us"
@@ -177,22 +179,32 @@ const Navbar = () => {
                         Dashboard
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="/register"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      >
-                        Sign up
-                      </Link>
-                    </li>
-                    <li>
+                      <li>
                       <Link
                         to="/login"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md  bg-blue-500 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                       >
                         Login
                       </Link>
                     </li>
+                    <li>
+                      <button
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md  bg-blue-500 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                      >
+                        LogOut
+                      </button>
+                    </li>
+                    </>:<>
+                    <li>
+                      <Link
+                        to="/register"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                      >
+                        Sign up
+                      </Link>
+                    </li>
+                    </>
+                    }
                   </ul>
                 </nav>
               </div>

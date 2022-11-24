@@ -1,9 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const BarndName = () => {
-    const item= useLoaderData()
-    console.log(item)
+
   const { data: Brand = [] } = useQuery({
     queryKey: ["BrandName"],
     queryFn: () =>
@@ -14,9 +13,9 @@ const BarndName = () => {
         <div>
             <h2 className="text-center py-6  font-semibold text-5xl">Caregorys</h2>
         </div>
-      <div className="grid grid-cols-3  gap-14 container mx-auto mt-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  gap-14 container mx-auto mt-20">
         {Brand.map((Brands) => (
-          <div key={Brands._id} className=" bg-slate-200">
+          <div key={Brands._id} className=" bg-gray-100">
             <div className="p-8">
               <img className="w-full" src={Brands.img} alt="" />
               <Link to={`/categorys/${Brands.c_id}`}>

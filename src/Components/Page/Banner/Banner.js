@@ -4,18 +4,7 @@ import background from "../../../image/phe3.png";
 
 const Banner = () => {
   return (
-    // <div style={{ background: `url(${background})`, padding: "200px" }}>
-    //   <div>
-    //     <h2 className="text-6xl font-semibold text-white">
-    //       <span></span><br></br>
-    //       <span className="text-blue-500"> SMART</span> <br></br>
-    //       <span> PHONE FOR QUICK CASH</span>
-    //     </h2>
-    //   </div>
-    //   <div>
-    //     <img src={} alt="" />
-    //   </div>
-    // </div>
+
 <header className=" bg-slate-100 dark:bg-gray-900">
     <div className="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">

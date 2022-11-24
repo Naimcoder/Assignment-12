@@ -37,7 +37,7 @@ const CaragoryCard = ({ categorys,setBooke}) => {
             <label
               htmlFor="bookingModal"
               onClick={()=>setBooke(categorys)}
-              className="inline-flex py-2 rounded px-5 bg-black  items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+              className="inline-flex py-2 rounded px-5 bg-black text-white  items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
             >
               BOOK NOW
             </label>

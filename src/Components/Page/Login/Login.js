@@ -31,7 +31,9 @@ const Login = () => {
   // goole sign in
   const googleSignIn = () => {
     signInWithGoogle()
-      .then(() => {})
+      .then(() => {
+        navigate(from, { replace: true });
+      })
       .catch((error) => {
         console.error(error);
       });
@@ -51,12 +53,13 @@ const Login = () => {
       });
   };
 
+
   return (
-    <div className="flex  justify-center container mx-auto">
+    <div className="lg:flex justify-center container mx-auto">
         <div className="mt-6">
             <img src={login} alt="" />
         </div>
-      <div className="w-2/6 bg-slate-300 p-10 rounded shadow-lg my-10 mx-auto">
+      <div className="lg:w-2/6 bg-slate-300 p-10 rounded shadow-lg my-10 mx-auto">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign in</h1>
           <p className="text-sm  text-gray-900">
@@ -134,31 +137,18 @@ const Login = () => {
         <p className="px-3  font-medium text-lg text-center py-6 dark:text-gray-400">
           Login with social accounts
         </p>
-        <div className="flex  justify-center items-center">
-          <div>
-            <button
-              onClick={googleSignIn}
-              className="mr-3 h-10 w-10  bg-amber-700 flex justify-center items-center rounded"
-            >
-              <span className="text-2xl text-white ">
-                <FaGoogle></FaGoogle>
-              </span>
-            </button>
-          </div>
-          <div>
-            <button className="mr-3 h-10 w-10  bg-black flex justify-center items-center rounded">
-              <span className="text-2xl text-white ">
-                <FaGithub></FaGithub>
-              </span>
-            </button>
-          </div>
-          <div>
-            <button className="mr-3 h-10 w-10  bg-blue-600 flex justify-center items-center rounded">
-              <span className="text-2xl text-white ">
-                <FaFacebookF></FaFacebookF>
-              </span>
-            </button>
-          </div>
+        <div>
+          <button
+           onClick={googleSignIn}
+            type="button"
+            class="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-medium text-white transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
+          >
+            <span className="text-2xl text-white ">
+              <FaGoogle></FaGoogle>
+            </span>
+
+            <span class="hidden mx-2 sm:inline">Sign in with Google</span>
+          </button>
         </div>
       </div>
     </div>

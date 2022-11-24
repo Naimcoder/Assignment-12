@@ -5,16 +5,20 @@ import CaragoryCard from '../CategoryCard/CaragoryCard';
 
 
 const CategoroyDetalis = () => {
-    const items= useLoaderData()
     const [booked,setBooke]=useState(null)
+    const items= useLoaderData()
     return (
        <div>
-         <div className='grid grid-cols-3 container mx-auto gap-7 mt-20'>
+         <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 container mx-auto gap-7 mt-20'>
             {items.map(category=><CaragoryCard key={category._id} categorys={category}
             setBooke={setBooke}
-            ></CaragoryCard>  )}
+            ></CaragoryCard>)}
+            {booked &&
+             <BookingModel booked={booked}setBooke={setBooke}></BookingModel>
+            }
+             
         </div>
-        <BookingModel booked={booked}></BookingModel>
+       
        </div>
     );
 };

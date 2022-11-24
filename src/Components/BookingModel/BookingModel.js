@@ -1,8 +1,50 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/UseContext";
 
-const BookingModel = ({booked}) => {
+const BookingModel = ({booked, setBooked }) => {
+  const { name, resale_price, original_price, location,picture} = booked;
     const {user}=useContext(AuthContext)
+    const handleBooking = (event) => {
+          event.preventDefault();
+          const form = event.target;
+          const productName = form.productName.value;
+          const name = form.name.value;
+          const email = form.email.value;
+          const phone = form.number.value;
+          const original_price = form.original_price.value;
+          const resale_price = form.resale_price.value;
+      
+          const booking = {
+            productname: productName,
+            user: name,
+            email,
+            resale_price,
+            original_price,
+            phone,
+            picture,
+          };
+          console.log(booking)
+          fetch("http://localhost:8000/bookings", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(booking),
+          })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              // setBooked(null);
+              toast.success("Booking Confirm");
+          }
+          else {
+              toast.error(data.message);
+          }
+        });
+      
+        };
+
   return (
     <div>
       {/* The button to open modal */}
@@ -18,12 +60,13 @@ const BookingModel = ({booked}) => {
             ✕
           </label>
            <div>
-           <form>
+           <form onSubmit={handleBooking}>
             <input
               type="text"
-              value={booked.name}
+              name="productName"
               disabled
               className="input w-full py-5 my-2 "
+              value={name}
             />
             <br></br>
             <input
@@ -53,15 +96,15 @@ const BookingModel = ({booked}) => {
               type="number"
               placeholder="Enter Your Number"
               className="input w-full py-5 my-2"
-              name="number"
-            //   defaultValue={resale_price}
+              name="resale_price"
+              defaultValue={resale_price}
             />
             <input
               type="number"
               placeholder="Enter Your Number"
               className="input w-full py-5 my-2"
-              name="number"
-            //   defaultValue={original_price}
+              name="original_price"
+              defaultValue={original_price}
             />
             <button  htmlFor="bookingModal" className="btn w-full  btn-primary my-3" type="submit">
               Submit
@@ -76,3 +119,4 @@ const BookingModel = ({booked}) => {
 };
 
 export default BookingModel;
+

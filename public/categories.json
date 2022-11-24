@@ -1,0 +1,14 @@
+[
+    {
+        "name": "SAMSUNG",
+        "img":"https://i.ibb.co/4YydMDZ/samsung-logo.png"
+      },
+      {
+        "name": "IPHONE",
+        "img" :"https://i.ibb.co/TYydp59/iphone-logo.png"
+      },
+      {
+        "name": "XIAOMI",
+        "img":"https://i.ibb.co/gFpKz68/xiaomi-logo.png"
+      }
+]

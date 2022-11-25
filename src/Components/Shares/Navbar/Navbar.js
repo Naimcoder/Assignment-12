@@ -50,6 +50,14 @@ const Navbar = () => {
               product Categories
             </Link>
           </li>
+          <li>
+            <Link
+              to="/blog"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Blog
+            </Link>
+          </li>
           {user?.uid ? <>
           <li>
             <Link
@@ -89,7 +97,9 @@ const Navbar = () => {
           </li>
           </>
           }
-          {user?.uid ? <><img src={user?.photoURL} alt="" /></>:<FaUser></FaUser>}
+          {user?.uid ? <><img className="w-14 h-14 rounded-full" src={user?.photoURL} alt="" /></>
+          
+          :<FaUser></FaUser>}
         </ul>
         <div className="lg:hidden">
           <button

@@ -24,6 +24,7 @@ const Login = () => {
         const users = result.user;
         console.log(users);
         toast.success("successfully login");
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
   };

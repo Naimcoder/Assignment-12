@@ -1,14 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../Components/Shares/Navbar/Navbar';
 import SideBar from '../Components/Shares/SideBar/SideBar';
 
 const DashBoardLayour = () => {
     return (
-        <div>
-            <Navbar></Navbar>
-            <SideBar></SideBar>
-            <Outlet></Outlet>
+        <div className='md:flex relative  min-h-screen'>
+            <div className=' w-60'>
+                <SideBar></SideBar>
+            </div>
+            <div className='flex-1'>
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };

@@ -3,126 +3,118 @@
     "category_id": "03",
     "picture": "https://i.ibb.co/Zh4FzMT/Apple-i-Phone-XS-Max.png",
     "name": "Apple iPhone XS Max",
-    "location": "Dhaka,Bangladesh",
+    "location": "Mirpur 10,Dhaka",
     "resale_price": "300",
     "original_price": "700",
-    "years_of_use": "1/Year",
-    "time": "20-20-2022",
-    "author": {
-      "saler_name": "Rakib",
-      "verified": "true"
-    }
+    "years_of_use": "1.5",
+    "time": "12-11-2022",
+    "condition": "Good",
+    "brandname":"IPHONE",
+    "description":"The iPhone XS has a design visually near-identical to the iPhone X but includes upgraded hardware, featuring the A12 Bionic chip built with a 7 nm process.[17] It features a 5.85 inch (149 mm) OLED display (marketed as 5.8 inch) with a resolution of 2436 × 1125 pixels (2.7 megapixels) at 458 ppi."
   },
   {
     "category_id": "03",
     "picture": "https://i.ibb.co/Jz1V7kW/Apple-i-Phone-11-Pro-Max.png",
     "name": "Apple iPhone 11 Pro Max",
-    "location": "Dhaka,Bangladesh",
+    "location": "Mirpur 3,Dhaka",
     "resale_price": "400",
     "original_price": "600",
-    "years_of_use": "1/year",
-    "time": "20-22-2022",
-    "author": {
-      "saler_name": "rakib",
-      "verified": "false"
-    }
+    "years_of_use": "1",
+    "time": "10-11-2022",
+    "condition": "Good",
+    "brandname":"IPHONE",
+    "description":"Apple iPhone 11 Pro Max smartphone. Announced Sep 2019. Features 6.5″ display, Apple A13 Bionic chipset, 3969 mAh battery, 512 GB storage, 4 GB RAM"
+   
   },
   {
     "category_id": "03",
     "picture": "https://i.ibb.co/M1ZN8KD/i-Phone-12-Pro.png",
     "name": "iPhone 12 Pro",
-    "location": "Dhaka,Bangladesh",
-    "resale_price": "400",
-    "original_price": "600",
-    "years_of_use": "1/year",
-    "time": "20-22-2022",
-    "author": {
-      "saler_name": "rakib",
-      "verified": "false"
-    }
+    "location": "Mirpur 1,Dhaka",
+    "resale_price": "900",
+    "original_price": "800",
+    "years_of_use": "2",
+    "time": "15-11-2022",
+    "condition": "Good",
+    "brandname":"IPHONE",
+    "description":"Apple iPhone 12 Pro smartphone. Announced Oct 2020. Features 6.1″ display, Apple A14 Bionic chipset, 2815 mAh battery, 512 GB storage, 6 GB RAM"
   },
   {
     "category_id": "02",
     "picture": "https://i.ibb.co/GWCtR14/Samsung-Galaxy-A70.png",
     "name": "Samsung Galaxy A70",
-    "location": "Dhaka,Bangladesh",
+    "location": "Mirpur 9,Dhaka",
     "resale_price": "400",
-    "original_price": "600",
-    "years_of_use": "1/year",
-    "time": "20-22-2022",
-    "author": {
-      "saler_name": "rakib",
-      "verified": "false"
-    }
+    "original_price": "800",
+    "condition": "Good",
+    "years_of_use": "1.8",
+    "time": "21-11-2022",
+    "brandname":"SAMSUMG",
+    "description":"Samsung Galaxy A70 ; Size, 6.7 inches, 108.4 cm2 (~86.0% screen-to-bodyratio) ; Resolution, 1080 x 2400 pixels, 20:9 ratio (~393 ppi density) ;  128 GB storage, 8 GB RAM"
   },
   {
     "category_id": "02",
     "picture": "https://i.ibb.co/qsX93Ny/Samsung-Galaxy-Note10-Lite.png",
     "name": "Samsung Galaxy Note10 Lite",
-    "location": "Dhaka,Bangladesh",
+    "location": "Mirpur,Dhaka",
     "resale_price": "400",
-    "original_price": "600",
-    "years_of_use": "1/year",
-    "time": "20-22-2022",
-    "author": {
-      "saler_name": "rakib",
-      "verified": "false"
-    }
+    "original_price": "700",
+    "years_of_use": "1.2",
+    "time": "20-11-2022",
+    "condition": "Good",
+    "brandname":"SAMSUMG",
+    "description":"Samsung Galaxy Note10 Lite Android smartphone. Announced Jan 2020. Features 6.7″ display, Exynos 9810 chipset, 4500 mAh battery, 128 GB storage, 8 GB RAM"
   },
   {
     "category_id": "02",
     "picture": "https://i.ibb.co/Lgsm5vM/Samsung-Galaxy-A32.png",
     "name": "Samsung Galaxy A32",
-    "location": "Dhaka,Bangladesh",
+    "location": "Mirpur 2,Dhaka",
     "resale_price": "400",
-    "original_price": "600",
-    "years_of_use": "1/year",
-    "time": "20-22-2022",
-    "author": {
-      "saler_name": "rakib",
-      "verified": "false"
-    }
-  },
+    "original_price": "800",
+    "years": "1/year",
+    "time": "18-11-2022",
+    "condition": "Good",
+    "brandname":"SAMSUMG",
+    "description":"Samsung Galaxy A32 ; Display, Type ; Size, 6.4 inches, 98.9 cm2 (~84.6% screen-to-body ratio) ; Resolution, 1080 x 2400 pixels, 20:9 ratio (~411 ppi density). Internal: 64GB 4GB RAM, 128GB 4GB RAM"},
   {
     "category_id": "01",
     "picture": "https://i.ibb.co/NKKynNG/Redmi-7.png",
     "name": "Redmi 7",
-    "location": "Dhaka,Bangladesh",
+    "location": "Mirpur 10,Dhaka",
     "resale_price": "400",
     "original_price": "600",
-    "years_of_use": "1/year",
-    "time": "20-22-2022",
-    "author": {
-      "saler_name": "rakib",
-      "verified": "false"
-    }
+    "years_of_use": "1.5",
+    "time": "22-11-2022",
+    "condition": "Good",
+    "brandname":"XIAOMI",
+    "description":"Xiaomi Redmi 7 Android smartphone. Announced Mar 2019. Features 6.26″ display, Snapdragon 632 chipset, 4000 mAh battery, 64 GB storage, 4 GB RAM,"
   },
   {
     "category_id": "01",
     "picture": "https://i.ibb.co/xg3Wkqx/Mi-Note-10-Pro.png",
     "name": "Mi Note 10 Pro",
-    "location": "Dhaka,Bangladesh",
-    "resale_price": "400",
-    "original_price": "600",
-    "years_of_use": "1/year",
-    "time": "20-22-2022",
-    "author": {
-      "saler_name": "rakib",
-      "verified": "false"
-    }
+    "location": "Mirpur 2,Dhaka",
+    "resale_price": "500",
+    "original_price": "900",
+    "years_of_use": "1.7",
+    "time": "21-11-2022",
+    "condition": "Good",
+    "brandname":"XIAOMI",
+    "description":"Xiaomi Redmi Note 10 Pro specs; Operating System, Android 11 (MIUI 12) ; Chipset, Qualcomm Snapdragon 732G (8 nm) ; RAM, 6 GB ; Processor, Octa core"
   },
+
   {
     "category_id": "01",
     "picture": "https://i.ibb.co/rsCc4nm/Redmi-Note-7-Pro.png",
     "name": "Redmi Note 7 Pro",
-    "location": "Dhaka,Bangladesh",
+    "location": "Mirpur,Dhaka",
     "resale_price": "400",
     "original_price": "600",
-    "years_of_use": "1/year",
-    "time": "20-22-2022",
-    "author": {
-      "saler_name": "rakib",
-      "verified": "false"
-    }
+    "years_of_use": "1",
+    "time": "20-11-2022",
+    "condition": "Good",
+    "brandname":"XIAOMI",
+    "description":"Xiaomi Redmi Note 7 Pro Android smartphone. Announced Feb 2019. Features 6.3″ display, Snapdragon 675 chipset, 4000 mAh battery, 128 GB storage, 6 GB RAM"
   }
 ]

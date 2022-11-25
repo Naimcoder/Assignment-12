@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
-import {  Link, useNavigate } from "react-router-dom";
+import {  Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
 import signup from "../../../image/login.gif";
 import SmallSpnner from "../SmallSpnner/SmallSpnner";
@@ -16,6 +16,8 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const location =useLocation();
+  const from = location.state?.from?.pathname || "/"
 
   const handleRegisetSubmit = (data) => {
     console.log(data);
@@ -25,15 +27,14 @@ const Register = () => {
         console.log(users);
         updateName(data.name, user?.photoURL)
           .then(() => {
-            saveUser(data.name,data.user,data.select)
-            navigate("/");
+            saveUser(data.name,data.email,data.select)
+            navigate(from,{replace:true});
             toast.success("Successfully UpdateName");
           })
           .catch((error) => console.log(error));
         toast.success("successfully Register");
       })
       .catch((err) => {
-        setLoader(false);
         toast.error(err.message);
       });
   };
@@ -41,7 +42,7 @@ const Register = () => {
   const handleGoogle=()=>{
     signInWithGoogle()
     .then(()=>{
-      navigate("/");
+      navigate(from,{replace:true});
     })
     .catch(error=>console.log(error))
   }
@@ -110,8 +111,8 @@ const Register = () => {
                 required: true,
               })}
                className="select select-bordered w-full">
-              <option>Buyer</option>
-              <option>Seller</option>
+              <option value="user">User</option>
+              <option value="seller">Seller</option>
             </select>
           </div>
           <div className="mb-1 sm:mb-2">
@@ -148,7 +149,7 @@ const Register = () => {
               type="submit"
               className="inline-flex mt-4 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md uppercase  bg-blue-600 focus:shadow-outline focus:outline-none"
             >
-              {loader ? <SmallSpnner></SmallSpnner> : "Sign Up"}
+              Sign Up
             </button>
           </div>
           <p className="text-xs text-black sm:text-sm">

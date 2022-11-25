@@ -77,7 +77,6 @@ const BookingModel = ({booked, setBooked }) => {
               defaultValue={user?.displayName}
             />
             <br></br>
-            <br></br>
             <input
               type="email"
               placeholder="Enter Your Email"

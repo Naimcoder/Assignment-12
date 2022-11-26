@@ -25,6 +25,45 @@ const SideNavBar = () => {
                 Home
               </Link>
             </li>
+            <li>
+              <Link
+                to="/dashboard/myorder"
+                className="flex items-center text-lg font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >
+                <span className="text-blue-500 mr-2">
+                  {" "}
+                  <FaShoppingCart></FaShoppingCart>{" "}
+                </span>
+                My Orders
+              </Link>
+            </li>
+            { isSeller && (
+              <>
+                <li>
+                  <Link
+                    to="/dashboard/addproducts"
+                    className="flex items-center text-lg py-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    <span className="text-blue-500 mr-2">
+                      <FaBabyCarriage></FaBabyCarriage>
+                    </span>
+                    Add Products
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/dashboard/myproducts"
+                    className="flex items-center text-lg py-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    <span className="text-blue-500 mr-2">
+                      <FaBabyCarriage></FaBabyCarriage>
+                    </span>
+                    My Products
+                  </Link>
+                </li>
+              </>
+            )}
             {isAdmin && (
               <>
                 <li>
@@ -49,61 +88,9 @@ const SideNavBar = () => {
                     All Seller
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    to="/dashboard/addproducts"
-                    className="flex items-center text-lg py-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                  >
-                    <span className="text-blue-500 mr-2">
-                      <FaBabyCarriage></FaBabyCarriage>
-                    </span>
-                    Add Products
-                  </Link>
-                </li> */}
               </>
             )}
-            {
-               isSeller &&
-               <>
-                  <li>
-               <Link
-                 to="/dashboard/addproducts"
-                 className="flex items-center text-lg py-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-               >
-                 <span className="text-blue-500 mr-2">
-                   <FaBabyCarriage></FaBabyCarriage>
-                 </span>
-                 Add Products
-               </Link>
-             </li>
-             
-                  <li>
-               <Link
-                 to="/dashboard/myproducts"
-                 className="flex items-center text-lg py-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-               >
-                 <span className="text-blue-500 mr-2">
-                   <FaBabyCarriage></FaBabyCarriage>
-                 </span>
-                 My Products
-               </Link>
-             </li>
-             
-               
-               </>
-            }
-            <li>
-              <Link
-                to="/dashboard/myorder"
-                className="flex items-center text-lg font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                <span className="text-blue-500 mr-2">
-                  {" "}
-                  <FaShoppingCart></FaShoppingCart>{" "}
-                </span>
-                My Orders
-              </Link>
-            </li>
+            
           </ul>
         </nav>
       </div>

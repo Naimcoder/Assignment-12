@@ -27,7 +27,7 @@ const Register = () => {
         console.log(users);
         updateName(data.name, user?.photoURL)
           .then(() => {
-            saveUser(data.name,data.email,data.select)
+            saveUser(data.name,data.email,data.role)
             navigate(from,{replace:true});
             toast.success("Successfully UpdateName");
           })
@@ -47,8 +47,8 @@ const Register = () => {
     .catch(error=>console.log(error))
   }
 
-  const saveUser=(name,email,selects)=>{
-    const user= {name,email,selects}
+  const saveUser=(name,email,role)=>{
+    const user= {name,email,role}
     fetch(`http://localhost:8000/users`,{
       method:"POST",
       headers:{
@@ -107,7 +107,7 @@ const Register = () => {
           </div>
 
           <div className="mb-1">
-            <select  {...register("select", {
+            <select  {...register("role", {
                 required: true,
               })}
                className="select select-bordered w-full">

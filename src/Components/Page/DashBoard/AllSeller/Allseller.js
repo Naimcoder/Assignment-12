@@ -19,18 +19,7 @@ const Allseller = () => {
  }
  })
 
-    const handleMakeAdmin = id => {
-        fetch(`http://localhost:8000/users/admin/${id}`, {
-          method: 'PATCH', 
-        })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)
-          if(data.modifiedCount){
-            toast.success('admin SuccessFull');
-            refetch();
-        }
-        })}
+
         const handleDelete=(id)=>{
             fetch(`http://localhost:8000/users/admin/${id}`,{
                 method:"DELETE",
@@ -52,7 +41,7 @@ const Allseller = () => {
                 <th>Seller Name</th>
                 <th>Seller Email</th>
                 <th>Action</th>
-                <th>Promotion</th>
+
               </tr>
             </thead>
             <tbody>
@@ -68,16 +57,6 @@ const Allseller = () => {
                       >
                         Delete
                       </button>
-                  </td>
-                  <td>
-                    {users?.role !== "admin" && (
-                      <button
-                        onClick={() => handleMakeAdmin(users?._id)}
-                        className="btn btn-blue-600 btn-xs text-white"
-                      >
-                        Make Admin
-                      </button>
-                    )}
                   </td>
                 </tr>
               ))}

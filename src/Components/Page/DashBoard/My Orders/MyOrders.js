@@ -21,10 +21,10 @@ console.log(data)
                   <input type="checkbox" className="checkbox" />
                 </label>
               </th>
-              <th>User Name</th>
+              <th>Image</th>
               <th>Product Name</th>
               <th>Price</th>
-              <th>Action</th>
+              <th>Promition</th>
             </tr>
           </thead>
           <tbody>
@@ -38,12 +38,8 @@ console.log(data)
                 <div className="flex items-center space-x-3">
                   <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
-                      <img src={user?.photoURL} alt="Avatar Tailwind CSS Component" />
+                      <img src={order?.picture} alt="Avatar Tailwind CSS Component" />
                     </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">{order?.user}</div>
-                    <p>{order.location}</p>
                   </div>
                 </div>
               </td>
@@ -52,7 +48,7 @@ console.log(data)
               </td>
               <td>{order?.resale_price}</td>
               <th>
-                <button className="btn  btn-orange-600 btn-xs">Delete</button>
+                <button className="btn  btn-orange-600 btn-xs">Pay</button>
               </th>
             </tr>)
             }

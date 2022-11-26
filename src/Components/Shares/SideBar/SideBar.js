@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import UseContext, { AuthContext } from "../../../Context/UseContext";
 import SideNavBar from "../SideNavBar/SideNavBar";
-
+import logo from '../../../image/logo2.png'
 const SideBar = () => {
   const { user } = UseContext(AuthContext);
   const [isActive, setActive] = useState("false");
@@ -14,7 +14,7 @@ const SideBar = () => {
 
   return (
     <div>
-      <div className="bg-gray-100 text-black flex justify-between md:hidden">
+      <div className="bg-gray-100 text-black flex justify-between md:hidden w-full">
         <div>
           <div className="block cursor-pointer p-4 font-bold">
             <Link to="/">BigOne</Link>
@@ -34,7 +34,9 @@ const SideBar = () => {
           isActive && "-translate-x-full"
         }  md:translate-x-0  transition duration-200 ease-in-out`}
       >
+        
         <div>
+        <img className="p-3" src={logo} alt="" />
          <SideNavBar></SideNavBar>
         </div>
       </div>

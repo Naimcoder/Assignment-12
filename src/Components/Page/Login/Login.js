@@ -60,7 +60,7 @@ const Login = () => {
         <div className="mt-6">
             <img src={login} alt="" />
         </div>
-      <div className="lg:w-2/6 bg-slate-300 p-10 rounded shadow-lg my-10 mx-auto">
+      <div className="lg:w-2/6  bg-gray-100 p-10 rounded shadow-lg my-10 mx-auto">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign in</h1>
           <p className="text-sm  text-gray-900">

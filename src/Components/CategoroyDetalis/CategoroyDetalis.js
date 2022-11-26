@@ -16,7 +16,6 @@ const CategoroyDetalis = () => {
             {booked &&
              <BookingModel booked={booked}setBooke={setBooke}></BookingModel>
             }
-             
         </div>
        
        </div>

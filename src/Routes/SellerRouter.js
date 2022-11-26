@@ -8,6 +8,8 @@ import UseSeller from '../Hook/UseSeller';
 const SellerRouter = ({children}) => {
     const {user,loader}= useContext(AuthContext)
     const [isSeller,isSellerLoading] = UseSeller(user?.email);
+    console.log(isSellerLoading,loader,isSeller)
+    
     const location= useLocation()
     if(loader || isSellerLoading){
       return <SmallSpnner></SmallSpnner>

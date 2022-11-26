@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../../../Context/UseContext";
+
+
 
 const AddProducts = () => {
+ const {user}=useContext(AuthContext)
   const handleProduct = (event) => {
     event.preventDefault();
     const from = event.target;
@@ -41,6 +45,7 @@ const AddProducts = () => {
     time: date,
     condition: productcategory,
     description: description,
+    email:user?.email
   };
   fetch(`http://localhost:8000/categorys`,{
     method:"POST",

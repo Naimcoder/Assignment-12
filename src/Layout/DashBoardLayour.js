@@ -5,7 +5,7 @@ import SideBar from '../Components/Shares/SideBar/SideBar';
 const DashBoardLayour = () => {
     return (
         <div className='md:flex relative  min-h-screen'>
-            <div className=' w-60'>
+            <div className=' w-64'>
                 <SideBar></SideBar>
             </div>
             <div className='flex-1'>

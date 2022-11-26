@@ -40,6 +40,17 @@ const SideNavBar = () => {
                 </li>
                 <li>
                   <Link
+                    to="/dashboard/allseller"
+                    className="flex items-center  text-lg pt-3 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    <span className="text-blue-500 mr-2">
+                      <FaUser></FaUser>
+                    </span>
+                    All Seller
+                  </Link>
+                </li>
+                {/* <li>
+                  <Link
                     to="/dashboard/addproducts"
                     className="flex items-center text-lg py-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                   >
@@ -48,12 +59,13 @@ const SideNavBar = () => {
                     </span>
                     Add Products
                   </Link>
-                </li>
+                </li> */}
               </>
             )}
             {
                isSeller &&
-               <li>
+               <>
+                  <li>
                <Link
                  to="/dashboard/addproducts"
                  className="flex items-center text-lg py-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -64,6 +76,21 @@ const SideNavBar = () => {
                  Add Products
                </Link>
              </li>
+             
+                  <li>
+               <Link
+                 to="/dashboard/myproducts"
+                 className="flex items-center text-lg py-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+               >
+                 <span className="text-blue-500 mr-2">
+                   <FaBabyCarriage></FaBabyCarriage>
+                 </span>
+                 My Products
+               </Link>
+             </li>
+             
+               
+               </>
             }
             <li>
               <Link

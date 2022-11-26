@@ -23,6 +23,8 @@ const BookingModel = ({booked, setBooked }) => {
             original_price,
             phone,
             picture,
+            location,
+            date:new Date().toLocaleDateString()
           };
           console.log(booking)
           fetch("http://localhost:8000/bookings", {

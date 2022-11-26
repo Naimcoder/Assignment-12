@@ -21,10 +21,10 @@ console.log(data)
                   <input type="checkbox" className="checkbox" />
                 </label>
               </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
+              <th>User Name</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -43,18 +43,16 @@ console.log(data)
                   </div>
                   <div>
                     <div className="font-bold">{order?.user}</div>
-                    <div className="text-sm opacity-50"></div>
+                    <p>{order.location}</p>
                   </div>
                 </div>
               </td>
               <td>
               {order?.productname}
-                <br/>
-                <span className="badge badge-ghost badge-sm"></span>
               </td>
-              <td>Purple</td>
+              <td>{order?.resale_price}</td>
               <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button className="btn  btn-orange-600 btn-xs">Delete</button>
               </th>
             </tr>)
             }

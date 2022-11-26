@@ -1,16 +1,28 @@
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import toast from "react-hot-toast";
 
 const AllUser = () => {
+  const [useBuyer,SetUseBuyer]=useState([])
+
   const { data = [],refetch } = useQuery({
     queryKey: ['users'],
-    queryFn: () =>
-      fetch("http://localhost:8000/users").then((res) => res.json()),
+    queryFn: () =>{
+      fetch("http://localhost:8000/users")
+      .then((res) => res.json())
+      .then(data=>{
+        const allBuyer = data.filter((User) => {
+          return User.selects === "user";
+        });
+        SetUseBuyer(allBuyer)
+      })
+    }
+     
   });
 
   const handleMakeAdmin = id => {
     fetch(`http://localhost:8000/users/admin/${id}`, {
-      method: 'PUT', 
+      method: 'PATCH', 
     })
     .then(res => res.json())
     .then(data => {
@@ -38,14 +50,14 @@ const AllUser = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Deleted</th>
-              <th>Admin</th>
+              <th>Buyer Name</th>
+              <th>Buyer Email</th>
+              <th>Action</th>
+              <th>Promotion</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((users, i) => (
+            {useBuyer.map((users, i) => (
               <tr>
                 <th>{i + 1}</th>
                 <td>{users.name}</td>

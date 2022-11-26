@@ -49,8 +49,8 @@ const passwordReset = email => {
 // =========== onAuthStateChange ========
 useEffect(()=>{
 const unsubscribe = onAuthStateChanged(auth,currentUser=>{
-  setUser(currentUser)
   setLoader(false)
+  setUser(currentUser)
  })
  return ()=>{
   unsubscribe()

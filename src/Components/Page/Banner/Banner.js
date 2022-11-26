@@ -20,7 +20,7 @@ const Banner = () => {
                 SMART  PHONE<br></br>
                 FOR QUICK CASH
                 </h1>
-                <p className="mt-4 text-gray-600 dark:text-gray-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae laudantium quod rem voluptatem eos accusantium cumque.</p>
+                <p className="mt-4 text-gray-600 dark:text-gray-300">We have been in the business for quite a while now, and in that time we have not only managed to make close relationships with numerous partners, but also to recognize what people need. At MobileShop you will find quality products from top brands at consistently low prices.</p>
                 <div className="mt-8">
                    <button to="#" className="block px-6 py-3 text-sm font-medium tracking-wider text-center text-white uppercase transition-colors duration-300 transform bg-gray-900 rounded-md hover:bg-gray-700">Get Started</button>
                 </div>

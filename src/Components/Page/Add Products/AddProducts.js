@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../Context/UseContext";
+import SmallSpnner from "../SmallSpnner/SmallSpnner";
 
 
 
 const AddProducts = () => {
+  const [loading,setLoading]=useState(true)
  const {user}=useContext(AuthContext)
+
   const handleProduct = (event) => {
     event.preventDefault();
     const from = event.target;
@@ -45,7 +48,8 @@ const AddProducts = () => {
     time: date,
     condition: productcategory,
     description: description,
-    email:user?.email
+    email:user?.email,
+    sellerName:user?.displayName
   };
   fetch(`http://localhost:8000/categorys`,{
     method:"POST",
@@ -64,10 +68,10 @@ const AddProducts = () => {
      
   })
     })
-  };
 
+  };
   return (
-    <div className="w-2/4 container mx-auto p-10 bg-slate-400 my-20">
+    <div className="lg:w-2/4 container mx-auto p-10 bg-slate-400 my-20">
       <h3 className="text-3xl">ADD A PRODUCTS</h3>
       <form onSubmit={handleProduct}>
         <input

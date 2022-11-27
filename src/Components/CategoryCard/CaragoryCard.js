@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CaragoryCard = ({ categorys, setBooke }) => {
+
   const {
     name,
     picture,
@@ -61,7 +62,7 @@ const CaragoryCard = ({ categorys, setBooke }) => {
               Location: {location}
               </h3>
               <h3 className="text-lg  font-semibold">
-              Seller Time: {times}
+               Time: {times}
               </h3>
             </div>
             <p className="text-bold text-xl text-blue-600">Description:</p>

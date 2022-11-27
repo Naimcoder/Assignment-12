@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../../../Context/UseContext";
 
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
   const [product, setProduct] = useState([]);
 
-  const { data = [] } = useQuery({
+  const { data = [],refetch } = useQuery({
     queryKey: ["categorys"],
     queryFn: () => {
       fetch("http://localhost:8000/categorys")
@@ -19,38 +20,70 @@ const MyProducts = () => {
         });
     },
   });
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:8000/categorys/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("user Delete SuccessFull");
+        console.log(data);
+        refetch();
+      });
+  };
+  
+  const handleAdvertise =()=>{
+    fetch(`http://localhost:8000/advertise`,{
+     method:"POST",
+     headers:{
+       "content-type":"application/json"
+     },
+     body: JSON.stringify({product})
+    })
+    .then(res=>res.json())
+    .then(data => {
+     console.log(data)
+     toast.success('advertised SuccessFully!')
+    })
+  }
   return (
     <div>
-      <h3>my products</h3>
-      
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Resale Price</th>
+              <th>Product Name</th>
+              <th>Sale Prices</th>
+              <th>Adverticed</th>
               <th>Action</th>
-              <th>Deleted</th>
             </tr>
           </thead>
           <tbody>
-          {product.map((items,i) => (
-        <tr>
-        <th>{i+1}</th>
-        <td>{items.name}</td>
-        <td>{items.resale_price}</td>
-        <td><button className=" btn btn-xs">Update</button></td>
-        <td><button className="btn btn-xs">Deleted</button></td>
-      </tr>
-      ))}
+            {product.map((product, i) => (
+              <tr key={product._id}>
+                <th>{i + 1}</th>
+                <td>
+                  {" "}
+                  <div className="mask mask-squircle w-20 h-20">
+                    <img src={product.picture} alt="" />
+                  </div>{" "}
+                </td>
+                <td>{product.name}</td>
+                <td>{product.resale_price}</td>
+                <td> <button onClick={() => handleAdvertise(product)} className="inline-flex btn-xs bg-red-600 text-white  items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Advertised</button></td>
+                <td><buton className="btn btn-xs">
+                   Delete
+                  </buton></td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     </div>
   );
-  
 };
 
 export default MyProducts;
-

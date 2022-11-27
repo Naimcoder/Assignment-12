@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import { useQuery } from "@tanstack/react-query";
+import React, { useContext, useEffect, useState } from "react";
 import { FaBabyCarriage, FaHome, FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
@@ -7,10 +8,33 @@ import UseSeller from "../../../Hook/UseSeller";
 import UseUser from "../../../Hook/UseUser/UseUser";
 
 const SideNavBar = () => {
+  const [users,setUsers]=useState([])
   const { user } = useContext(AuthContext);
   const [isAdmin] = UseAdmin(user?.email);
   const [isSeller] = UseSeller(user?.email);
   const [isUser]=UseUser(user?.email)
+ console.log(user)
+
+
+useEffect(() => {
+  fetch("http://localhost:8000/users")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      const checkUser = data.filter((chkUser) => {
+        return chkUser.email === user?.email;
+      });
+      setUsers(checkUser);
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+}, [user]);
+console.log(users)
+
+
+
   return (
     <div>
       <div class="flex flex-col justify-between flex-1 mt-6">
@@ -27,7 +51,7 @@ const SideNavBar = () => {
                 Home
               </Link>
             </li>
-            {isUser &&
+            { user && users[0]?.role === "user" &&
               <li>
                   <Link
                     to="/dashboard/myorder"
@@ -41,7 +65,7 @@ const SideNavBar = () => {
                   </Link>
                 </li>
             }
-            { isSeller && (
+            {  user && users[0]?.role === "seller" &&(
               <>
                 <li>
                   <Link
@@ -68,7 +92,7 @@ const SideNavBar = () => {
                 </li>
               </>
             )}
-            {isAdmin && (
+            { user && users[0]?.role === "admin" && (
               <>
                 <li>
                   <Link

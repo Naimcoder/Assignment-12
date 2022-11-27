@@ -1,24 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { FaCheckCircle } from "react-icons/fa";
 
 const AllUser = () => {
   const [useBuyer,SetUseBuyer]=useState([])
 
-  const { data = [],refetch } = useQuery({
-    queryKey: ['users'],
+  const { data =[],refetch } = useQuery({
+    queryKey: ['use'],
     queryFn: () =>{
       fetch("http://localhost:8000/users")
       .then((res) => res.json())
       .then(data=>{
-        const allBuyer = data.filter((User) => {
-          return User.selects === "user";
-        });
-        SetUseBuyer(allBuyer)
+        console.log(data)
+        if (data) {
+          const allBuyer = data.filter((User) => {
+            return User.role === "user";
+          });
+         SetUseBuyer(allBuyer)
+        }
       })
     }
      
   });
+  
 
   const handleMakeAdmin = id => {
     fetch(`http://localhost:8000/users/admin/${id}`, {
@@ -26,7 +31,6 @@ const AllUser = () => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       if(data.modifiedCount){
         toast.success('admin SuccessFull');
         refetch();
@@ -43,6 +47,25 @@ const AllUser = () => {
             refetch()
         })
        }
+
+  const handleVerifyed=(id)=>{
+   fetch(`http://localhost:8000/users/verifyed/${id}`,{
+    method:"PATCH",
+    headers:{
+      "content-type":"application/json"
+    },
+    body:JSON.stringify({verifyed:true})
+   })
+   .then(res=>res.json())
+   .then(data=>{
+    console.log(data)
+    refetch()
+    toast.success('successfully verifyed')
+
+   })
+  }
+
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -54,13 +77,17 @@ const AllUser = () => {
               <th>Buyer Email</th>
               <th>Action</th>
               <th>Promotion</th>
+              <th>Verifyed</th>
             </tr>
           </thead>
           <tbody>
             {useBuyer.map((users, i) => (
               <tr>
                 <th>{i + 1}</th>
-                <td>{users.name}</td>
+                <td className='flex items-center'>{users.name} 
+                <span className='ml-2 font-semibold'>{users?.verifyed ? <span className="text-blue-600"><FaCheckCircle/></span> : 'Not verify'}
+                </span>
+                </td>
                 <td>{users?.email}</td>
                 <td>
                 <button
@@ -79,6 +106,11 @@ const AllUser = () => {
                       Make Admin
                     </button>
                   )}
+                </td>
+                <td>
+                <button className=" btn btn-blue-600 btn-xs" onClick={()=>handleVerifyed(users?._id)}>
+                    Verifyed
+                   </button>
                 </td>
               </tr>
             ))}

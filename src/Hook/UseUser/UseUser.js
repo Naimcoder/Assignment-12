@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const UseUser = (email) => {
-    const [isUser, setIsUser] = useState('');
+    const [isUser, setIsUser] = useState("");
     const [isUserLoading, setIsUserLoading] = useState(true)
     useEffect(() => {
        if(email){
@@ -9,7 +9,7 @@ const UseUser = (email) => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            setIsUser(data.setIsUser)
+            setIsUser(data.isUser)
             setIsUserLoading(false);
         })
        }

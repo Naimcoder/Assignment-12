@@ -41,9 +41,24 @@ const Register = () => {
 
   const handleGoogle=()=>{
     signInWithGoogle()
-    .then(()=>{
-     
+    .then((result)=>{
+     const users= result.user
+      fetch(`http://localhost:8000/users`,{
+      method:"POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body: JSON.stringify({
+        name:users.displayName,email:users.email,role:"user"
+      })
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+      toast.success('Google Signin SuccessFully')
       navigate(from,{replace:true});
+    })
+      
     })
     .catch(error=>console.log(error))
   }
@@ -63,6 +78,7 @@ const Register = () => {
      
     })
   }
+  
   return (
     <div className="lg:flex container mx-auto mt-14">
       <div className="mt-6">

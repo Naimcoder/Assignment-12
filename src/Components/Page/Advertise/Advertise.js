@@ -14,6 +14,8 @@ const Advertise = () => {
   console.log(adveritise)
     return (
     <>
+    <h3 className='mt-8 text-5xl font-semibold py-5 text-center'>Advertiesed</h3>
+    <span className='h-10 w-10 bg-orange-600 '></span>
     {adveritise.length > 0 &&
         <div className='grid my-20 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10 container mx-auto'>
         {

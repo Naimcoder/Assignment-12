@@ -1,20 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useState } from "react";
 import { FaBabyCarriage, FaHome, FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
-import UseAdmin from "../../../Hook/UseAdmin";
-import UseSeller from "../../../Hook/UseSeller";
-import UseUser from "../../../Hook/UseUser/UseUser";
 
 const SideNavBar = () => {
   const [users,setUsers]=useState([])
   const { user } = useContext(AuthContext);
-  const [isAdmin] = UseAdmin(user?.email);
-  const [isSeller] = UseSeller(user?.email);
-  const [isUser]=UseUser(user?.email)
- console.log(user)
-
 
 useEffect(() => {
   fetch("http://localhost:8000/users")
@@ -31,9 +22,6 @@ useEffect(() => {
       console.log(err.message);
     });
 }, [user]);
-console.log(users)
-
-
 
   return (
     <div>

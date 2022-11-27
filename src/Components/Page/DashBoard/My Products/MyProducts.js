@@ -8,7 +8,7 @@ const MyProducts = () => {
   const [product, setProduct] = useState([]);
 
   const { data = [],refetch } = useQuery({
-    queryKey: ["categorys"],
+    queryKey: ["category"],
     queryFn: () => {
       fetch("http://localhost:8000/categorys")
         .then((res) => res.json())
@@ -27,7 +27,7 @@ const MyProducts = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("user Delete SuccessFull");
+        toast.success("Product Delete SuccessFull");
         console.log(data);
         refetch();
       });
@@ -74,7 +74,7 @@ const MyProducts = () => {
                 <td>{product.name}</td>
                 <td>{product.resale_price}</td>
                 <td> <button onClick={() => handleAdvertise(product)} className="inline-flex btn-xs bg-red-600 text-white  items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Advertised</button></td>
-                <td><buton className="btn btn-xs">
+                <td><buton onClick={()=>handleDelete(product._id)} className="btn btn-xs">
                    Delete
                   </buton></td>
               </tr>

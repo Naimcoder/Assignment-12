@@ -59,12 +59,12 @@ export const router= createBrowserRouter([
 },
 {
     path:'/dashboard',
-    element:<DashBoardLayour></DashBoardLayour>,
+    element:<PrivateRoutes><DashBoardLayour></DashBoardLayour></PrivateRoutes>,
     errorElement:<ErrorPage></ErrorPage>,
     children:[
         {
             path:"/dashboard/myorder",
-            element:<MyOrders></MyOrders> 
+            element:<PrivateRoutes><MyOrders></MyOrders></PrivateRoutes>
         },
         {
             path:"/dashboard/alluser",
@@ -76,12 +76,12 @@ export const router= createBrowserRouter([
         },
         {
            path:"/dashboard/addproducts",
-           element:<SellerRouter><AddProducts></AddProducts></SellerRouter>,
+           element:<AddProducts></AddProducts>,
            
         },
         {
            path:"/dashboard/myproducts",
-           element:<SellerRouter> <MyProducts></MyProducts> </SellerRouter>,
+           element:<MyProducts></MyProducts>,
            
         },
     ]

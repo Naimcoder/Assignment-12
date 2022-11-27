@@ -42,6 +42,7 @@ const Register = () => {
   const handleGoogle=()=>{
     signInWithGoogle()
     .then(()=>{
+     
       navigate(from,{replace:true});
     })
     .catch(error=>console.log(error))

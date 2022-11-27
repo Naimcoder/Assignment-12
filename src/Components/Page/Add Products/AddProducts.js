@@ -46,6 +46,7 @@ const AddProducts = () => {
     original_price: originalprice,
     years_of_use: useYears,
     time: date,
+    times: new Date().toLocaleTimeString(),
     condition: productcategory,
     description: description,
     email:user?.email,

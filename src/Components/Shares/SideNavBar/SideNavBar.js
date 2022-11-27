@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
 import UseAdmin from "../../../Hook/UseAdmin";
 import UseSeller from "../../../Hook/UseSeller";
+import UseUser from "../../../Hook/UseUser/UseUser";
 
 const SideNavBar = () => {
   const { user } = useContext(AuthContext);
   const [isAdmin] = UseAdmin(user?.email);
   const [isSeller] = UseSeller(user?.email);
+  const [isUser]=UseUser(user?.email)
   return (
     <div>
       <div class="flex flex-col justify-between flex-1 mt-6">
@@ -25,18 +27,20 @@ const SideNavBar = () => {
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                to="/dashboard/myorder"
-                className="flex items-center text-lg font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                <span className="text-blue-500 mr-2">
-                  {" "}
-                  <FaShoppingCart></FaShoppingCart>{" "}
-                </span>
-                My Orders
-              </Link>
-            </li>
+            {isUser &&
+              <li>
+                  <Link
+                    to="/dashboard/myorder"
+                    className="flex items-center text-lg font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    <span className="text-blue-500 mr-2">
+                      {" "}
+                      <FaShoppingCart></FaShoppingCart>{" "}
+                    </span>
+                    My Orders
+                  </Link>
+                </li>
+            }
             { isSeller && (
               <>
                 <li>

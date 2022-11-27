@@ -12,7 +12,8 @@ const CaragoryCard = ({ categorys, setBooke }) => {
     location,
     time,
     resale_price,
-    years_of_use
+    years_of_use,
+    times
   } = categorys;
 
   return (
@@ -58,6 +59,9 @@ const CaragoryCard = ({ categorys, setBooke }) => {
               </h3>
               <h3 className="text-lg  font-semibold">
               Location: {location}
+              </h3>
+              <h3 className="text-lg  font-semibold">
+              Seller Time: {times}
               </h3>
             </div>
             <p className="text-bold text-xl text-blue-600">Description:</p>

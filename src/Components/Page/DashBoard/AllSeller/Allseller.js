@@ -53,7 +53,7 @@ const Allseller = () => {
                   <td>
                   <button
                         onClick={() => handleDelete(users?._id)}
-                        className="btn   border-t-orange-500 btn-xs text-white"
+                        className="btn btn-orange-500 btn-xs text-white"
                       >
                         Delete
                       </button>

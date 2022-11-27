@@ -14,10 +14,11 @@ const SellerRouter = ({children}) => {
     if(loader || isSellerLoading){
       return <SmallSpnner></SmallSpnner>
     }
-   if(user && isSeller){
-    return children
+   if(!user && isSeller){
+    return<Navigate to='/login' state={{from:location}} replace></Navigate>
    }
-   return<Navigate to='/login' state={{from:location}} replace></Navigate>
+   return children
+  
 
 };
 

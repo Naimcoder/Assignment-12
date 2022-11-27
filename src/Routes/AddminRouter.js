@@ -12,10 +12,11 @@ const AddminRouter = ({children}) => {
     if(loader || isAdminLoading){
       return <SmallSpnner></SmallSpnner>
     }
-   if(user && isAdmin){
-    return children
+   if(!user && isAdmin){
+    return<Navigate to='/login' state={{from:location}} replace></Navigate>
    }
-   return<Navigate to='/login' state={{from:location}} replace></Navigate>
+   return children
+  
  
 };
 

@@ -8,9 +8,6 @@
 WebSite  [Live Link]...
 or...(https://assignment-authenticatio-d1235.web.app/) Livelink
 
-![plot](./src/logo.svg)
-
-
 WebSite Courses![plot](./public/BigOne.png)
 ## Details about our Website..
 ### How this website  was built?

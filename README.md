@@ -23,9 +23,11 @@ WebSite Courses![plot](./public/BigOne.png)
 
 
 ### what is the learn of website?
-> * 
-> * About  service  and online delivery
-> * The specific  online Food delivery services
+> * Google authication
+> * Stripe payment system
+> * Admin Seller user differnt Role
+> * Seller product add
+> * User Authorization
 
 | # setup:
 

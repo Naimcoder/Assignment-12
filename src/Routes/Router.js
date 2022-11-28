@@ -13,79 +13,108 @@ import Register from "../Components/Page/Register/Register";
 import ErrorPage from "../Components/Shares/ErrorPage/ErrorPage";
 import DashBoardLayour from "../Layout/DashBoardLayour";
 import Root from "../Layout/Root";
-import PrivateRoutes from "../Routes/PrivateRoutes"
+import PrivateRoutes from "../Routes/PrivateRoutes";
 import AddminRouter from "./AddminRouter";
+import SellerRouter from "./SellerRouter";
 
-
-export const router= createBrowserRouter([
- {
-    path:'/',
+export const router = createBrowserRouter([
+  {
+    path: "/",
     element: <Root></Root>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
-        {
-            path:'/',
-            element:<Home></Home>
-        },
-        {
-            path:'/home',
-            element:<Home></Home>
-        },
-        {
-            path:'/login',
-            element:<Login></Login>
-        },
-        {
-            path:'/register',
-            element:<Register></Register>
-        },
-        {
-            path:'/addproduct',
-            element:<AddProducts></AddProducts>
-        },
-        {path:'/categorys/:id',
-        element:<PrivateRoutes> <CategoroyDetalis></CategoroyDetalis></PrivateRoutes>,
-        loader:({params})=>fetch(`http://localhost:8000/categorys/${params.id}`)
-        },
-        {
-         path:'/blog',
-         element:<Blog></Blog>
-        },
-        {
-            path:'/categorys',
-            element:<BarndName></BarndName>
-        }
-    ]
-},
-{
-    path:'/dashboard',
-    element:<PrivateRoutes><DashBoardLayour></DashBoardLayour></PrivateRoutes>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
-        {
-            path:"/dashboard/myorder",
-            element:<PrivateRoutes><MyOrders></MyOrders></PrivateRoutes>
-        },
-        {
-            path:"/dashboard/alluser",
-            element:<AddminRouter><AllUser></AllUser></AddminRouter>
-        },
-        {
-            path:"/dashboard/allseller",
-            element:<AddminRouter><Allseller></Allseller> </AddminRouter>
-        },
-        {
-           path:"/dashboard/addproducts",
-           element:<AddProducts></AddProducts>,
-           
-        },
-        {
-           path:"/dashboard/myproducts",
-           element:<MyProducts></MyProducts>,
-           
-        },
-        
-    ]
-   }
-   
-])
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/home",
+        element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/addproduct",
+        element: <AddProducts></AddProducts>,
+      },
+      {
+        path: "/categorys/:id",
+        element: (
+          <PrivateRoutes>
+            {" "}
+            <CategoroyDetalis></CategoroyDetalis>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment-server-12-tawny.vercel.app/categorys/${params.id}`
+          ),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/categorys",
+        element: <BarndName></BarndName>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashBoardLayour></DashBoardLayour>
+      </PrivateRoutes>
+    ),
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/dashboard/myorder",
+        element: (
+          <PrivateRoutes>
+            <MyOrders></MyOrders>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/alluser",
+        element: (
+          <AddminRouter>
+            <AllUser></AllUser>
+          </AddminRouter>
+        ),
+      },
+      {
+        path: "/dashboard/allseller",
+        element: (
+          <AddminRouter>
+            <Allseller></Allseller>
+          </AddminRouter>
+        ),
+      },
+      {
+        path: "/dashboard/addproducts",
+        element: (
+          <SellerRouter>
+            <AddProducts></AddProducts>
+          </SellerRouter>
+        ),
+      },
+      {
+        path: "/dashboard/myproducts",
+        element: (
+          <SellerRouter>
+            <MyProducts></MyProducts>
+          </SellerRouter>
+        ),
+      },
+    ],
+  },
+]);

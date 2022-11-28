@@ -27,7 +27,7 @@ const BookingModel = ({booked, setBooked }) => {
             date:new Date().toLocaleDateString()
           };
           console.log(booking)
-          fetch("http://localhost:8000/bookings", {
+          fetch("https://assignment-server-12-tawny.vercel.app/bookings", {
             method: "POST",
             headers: {
               "content-type": "application/json",

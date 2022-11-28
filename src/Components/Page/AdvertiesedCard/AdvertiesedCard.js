@@ -12,9 +12,9 @@ const AdvertiesedCard = ({ adveritise }) => {
     years_of_use,
     condition,
     description,
-  } = adveritise.product[0];
+  } = adveritise.product;
 
-
+console.log(adveritise)
   
   return (
     <div>

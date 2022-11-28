@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../Context/UseContext";
 
@@ -49,7 +49,7 @@ const AddProducts = () => {
     email:user?.email,
     sellerName:user?.displayName
   };
-  fetch(`http://localhost:8000/categorys`,{
+  fetch(`https://assignment-server-12-tawny.vercel.app/categorys`,{
     method:"POST",
     headers:{
       "content-type":"application/json"

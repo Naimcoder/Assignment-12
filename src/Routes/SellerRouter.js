@@ -8,17 +8,16 @@ import UseSeller from '../Hook/UseSeller';
 const SellerRouter = ({children}) => {
     const {user,loader}= useContext(AuthContext)
     const [isSeller,isSellerLoading] = UseSeller(user?.email);
-    console.log(isSellerLoading,loader,isSeller)
+
     
     const location= useLocation()
-    if(loader || isSellerLoading){
+    if(loader && isSellerLoading){
       return <SmallSpnner></SmallSpnner>
     }
-   if(!user && isSeller){
+   if( isSeller ==='seller'){
     return<Navigate to='/login' state={{from:location}} replace></Navigate>
    }
    return children
-  
 
 };
 

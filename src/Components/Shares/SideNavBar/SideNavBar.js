@@ -8,7 +8,7 @@ const SideNavBar = () => {
   const { user } = useContext(AuthContext);
 
 useEffect(() => {
-  fetch("http://localhost:8000/users")
+  fetch("https://assignment-server-12-tawny.vercel.app/users")
     .then((res) => {
       return res.json();
     })

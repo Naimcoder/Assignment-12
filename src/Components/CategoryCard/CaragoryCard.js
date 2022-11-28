@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCheckCircle, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const CaragoryCard = ({ categorys, setBooke }) => {
@@ -14,7 +15,9 @@ const CaragoryCard = ({ categorys, setBooke }) => {
     time,
     resale_price,
     years_of_use,
-    times
+    times,
+    sellerName,
+    verifyed
   } = categorys;
 
   return (
@@ -64,6 +67,13 @@ const CaragoryCard = ({ categorys, setBooke }) => {
               <h3 className="text-lg  font-semibold">
                Time: {times}
               </h3>
+            </div>
+            <div className="flex items-center">
+             <span className="mr-3 w-10 h-10 bg-slate-400 flex justify-center items-center rounded-full"> <FaUser></FaUser></span>
+              <p>{sellerName}</p>
+              {
+               categorys.verifyed === true && <FaCheckCircle></FaCheckCircle>
+              }
             </div>
             <p className="text-bold text-xl text-blue-600">Description:</p>
             <p className="mb-2 text-gray-700">{description.slice(0, 200)}</p>

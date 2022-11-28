@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+
+import { useQuery } from '@tanstack/react-query';
 import AdvertiesedCard from '../AdvertiesedCard/AdvertiesedCard';
 
 const Advertise = () => {
-    const [adveritise,setAdvertise]=useState([])
-    useEffect(()=>{
-     fetch('http://localhost:8000/advertise')
-     .then(res=>res.json())
-     .then(data=>{
-        console.log(data)
-        setAdvertise(data)
-     })
-    },[])
+
+const{data:adveritise=[]}=useQuery({
+    queryKey:['advertise'],
+    queryFn:()=>fetch('https://assignment-server-12-tawny.vercel.app/advertise')
+    .then(res=>res.json())
+})
+    
 
     return (
     <>
@@ -19,7 +18,7 @@ const Advertise = () => {
     {adveritise.length > 0 &&
         <div className='grid my-20 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10 container mx-auto'>
         {
-            adveritise.map(adveritise=><AdvertiesedCard key={adveritise._id} adveritise={adveritise}></AdvertiesedCard>)
+            adveritise.map(adveritis=><AdvertiesedCard key={adveritis._id} adveritise={adveritis}></AdvertiesedCard>)
         }
     </div>
     }

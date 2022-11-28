@@ -7,9 +7,9 @@ const Allseller = () => {
   const [useSeller, setUseSeller] = useState([]);
 
   const { data = [], refetch } = useQuery({
-    queryKey: ['users'],
+    queryKey: ["users"],
     queryFn: () => {
-      fetch("http://localhost:8000/users")
+      fetch("https://assignment-server-12-tawny.vercel.app/users")
         .then((res) => res.json())
         .then((data) => {
           const allSeller = data.filter((seller) => {
@@ -19,24 +19,27 @@ const Allseller = () => {
         });
     },
   });
-// handleVerifyed
+  // handleVerifyed
   const handleVerifyed = (id) => {
-    fetch(`http://localhost:8000/users/verifyed/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ verifyed: true }),
-    })
+    fetch(
+      `https://assignment-server-12-tawny.vercel.app/users/verifyed/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ verifyed: true }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         toast.success("successfully verifyed");
-        refetch()
+        refetch();
       });
   };
-// handleMake admin 
+  // handleMake admin
   const handleMakeAdmin = (id) => {
-    fetch(`http://localhost:8000/users/admin/${id}`, {
+    fetch(`https://assignment-server-12-tawny.vercel.app/users/admin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -49,7 +52,7 @@ const Allseller = () => {
   };
   // handleDelete
   const handleDelete = (id) => {
-    fetch(`http://localhost:8000/users/admin/${id}`, {
+    fetch(`https://assignment-server-12-tawny.vercel.app/users/admin/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -77,9 +80,17 @@ const Allseller = () => {
             {useSeller.map((users, i) => (
               <tr key={users._id}>
                 <th>{i + 1}</th>
-                <td className='flex items-center'>{users.name} 
-                <span className='ml-2 font-semibold'>{users?.verifyed ? <span className="text-blue-600"><FaCheckCircle/></span> : 'Not verify'}
-                </span>
+                <td className="flex items-center">
+                  {users.name}
+                  <span className="ml-2 font-semibold">
+                    {users?.verifyed ? (
+                      <span className="text-blue-600">
+                        <FaCheckCircle />
+                      </span>
+                    ) : (
+                      "Not verify"
+                    )}
+                  </span>
                 </td>
                 <td>{users?.email}</td>
                 <td>
@@ -101,12 +112,18 @@ const Allseller = () => {
                   )}
                 </td>
                 <td>
-                <button
+                  {users?.verifyed ? (
+                    <button className="bg-green-600 text-white py-1 px-3 rounded-md hover:bg-sky-700 ease-in duration-300">
+                      Verified
+                    </button>
+                  ) : (
+                    <button
                       className=" btn btn-blue-600 btn-xs"
                       onClick={() => handleVerifyed(users?._id)}
                     >
                       Verifyed
                     </button>
+                  )}
                 </td>
               </tr>
             ))}

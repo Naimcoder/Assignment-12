@@ -5,7 +5,7 @@ const BarndName = () => {
   const { data: Brand = [] } = useQuery({
     queryKey: ["BrandName"],
     queryFn: () =>
-      fetch("http://localhost:8000/categoryname").then((res) => res.json()),
+      fetch("https://assignment-server-12-tawny.vercel.app/categoryname").then((res) => res.json()),
   });
   return (
     <div>

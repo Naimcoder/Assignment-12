@@ -6,8 +6,8 @@ export const AuthContext = createContext();
 export const auth= getAuth(app)
 
 const UseContext = ({ children }) => {
-  const[user,setUser]=useState(null)
   const [loader,setLoader]=useState(true)
+  const[user,setUser]=useState(null)
   const googleProvider = new GoogleAuthProvider()
 
 // =========== create user ============

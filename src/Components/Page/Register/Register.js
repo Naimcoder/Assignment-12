@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
-import {  Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
 import signup from "../../../image/login.gif";
 
@@ -21,7 +21,6 @@ const Register = () => {
 
 // handleSubmit 
   const handleRegisetSubmit = (data) => {
-    console.log(data);
     createUser(data.email, data.password)
       .then((result) => {
         const users = result.user;
@@ -45,7 +44,7 @@ const Register = () => {
     signInWithGoogle()
     .then((result)=>{
      const users= result.user
-      fetch(`http://localhost:8000/users`,{
+      fetch(`https://assignment-server-12-tawny.vercel.app/users`,{
       method:"POST",
       headers:{
         "content-type":"application/json"
@@ -67,7 +66,7 @@ const Register = () => {
 // saveUser data 
   const saveUser=(name,email,role)=>{
     const user= {name,email,role}
-    fetch(`http://localhost:8000/users`,{
+    fetch(`https://assignment-server-12-tawny.vercel.app/users`,{
       method:"POST",
       headers:{
         "content-type":"application/json"

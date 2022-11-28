@@ -2,15 +2,16 @@ import React from "react";
 import { Link, useRouteError } from "react-router-dom";
 import img from '../../../image/404.webp'
 const ErrorPage = () => {
+  
     const error = useRouteError();
     console.error(error);
+
   return (
     <div>
       <section className="flex items-center   py-72 bg-white text-black">
         <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
           <div className="max-w-md text-center">
             <h2 className="mb-8 font-extrabold text-9xl text-gray-600">
-              {/* <span className="sr-only">Error</span>404 */}
               <img src={img} alt="" />
             </h2>
             <p className="text-2xl font-semibold md:text-2xl">

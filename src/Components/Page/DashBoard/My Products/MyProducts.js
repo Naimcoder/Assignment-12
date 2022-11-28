@@ -21,6 +21,8 @@ const MyProducts = () => {
     },
   });
 
+  
+// handleDelete
   const handleDelete = (id) => {
     fetch(`http://localhost:8000/categorys/${id}`, {
       method: "DELETE",
@@ -32,7 +34,9 @@ const MyProducts = () => {
         refetch();
       });
   };
-  
+
+
+  // handleAdvertise
   const handleAdvertise =()=>{
     fetch(`http://localhost:8000/advertise`,{
      method:"POST",
@@ -47,6 +51,8 @@ const MyProducts = () => {
      toast.success('advertised SuccessFully!')
     })
   }
+
+
   return (
     <div>
       <div className="overflow-x-auto">

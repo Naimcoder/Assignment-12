@@ -11,7 +11,7 @@ const Advertise = () => {
         setAdvertise(data)
      })
     },[])
-  console.log(adveritise)
+
     return (
     <>
     <h3 className='mt-8 text-5xl font-semibold py-5 text-center'>Advertiesed</h3>

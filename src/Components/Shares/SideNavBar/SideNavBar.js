@@ -39,6 +39,7 @@ useEffect(() => {
                 Home
               </Link>
             </li>
+            {/* user */}
             { user && users[0]?.role === "user" &&
               <li>
                   <Link
@@ -53,6 +54,7 @@ useEffect(() => {
                   </Link>
                 </li>
             }
+            {/* seller */}
             {  user && users[0]?.role === "seller" &&(
               <>
                 <li>
@@ -80,6 +82,7 @@ useEffect(() => {
                 </li>
               </>
             )}
+            {/* admin */}
             { user && users[0]?.role === "admin" && (
               <>
                 <li>

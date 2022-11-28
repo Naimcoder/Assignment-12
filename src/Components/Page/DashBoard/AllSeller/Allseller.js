@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { FaCheck, FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 const Allseller = () => {
   const [useSeller, setUseSeller] = useState([]);
@@ -19,7 +19,7 @@ const Allseller = () => {
         });
     },
   });
-
+// handleVerifyed
   const handleVerifyed = (id) => {
     fetch(`http://localhost:8000/users/verifyed/${id}`, {
       method: "PATCH",
@@ -34,7 +34,7 @@ const Allseller = () => {
         refetch()
       });
   };
-
+// handleMake admin 
   const handleMakeAdmin = (id) => {
     fetch(`http://localhost:8000/users/admin/${id}`, {
       method: "PATCH",
@@ -47,6 +47,7 @@ const Allseller = () => {
         }
       });
   };
+  // handleDelete
   const handleDelete = (id) => {
     fetch(`http://localhost:8000/users/admin/${id}`, {
       method: "DELETE",
@@ -74,7 +75,7 @@ const Allseller = () => {
           </thead>
           <tbody>
             {useSeller.map((users, i) => (
-              <tr>
+              <tr key={users._id}>
                 <th>{i + 1}</th>
                 <td className='flex items-center'>{users.name} 
                 <span className='ml-2 font-semibold'>{users?.verifyed ? <span className="text-blue-600"><FaCheckCircle/></span> : 'Not verify'}

@@ -13,7 +13,9 @@ const AdvertiesedCard = ({ adveritise }) => {
     condition,
     description,
   } = adveritise.product[0];
-  console.log(adveritise.product[0]);
+
+
+  
   return (
     <div>
       <div className=" p-6 rounded-md shadow-md bg-white text-black">

@@ -15,7 +15,7 @@ import DashBoardLayour from "../Layout/DashBoardLayour";
 import Root from "../Layout/Root";
 import PrivateRoutes from "../Routes/PrivateRoutes"
 import AddminRouter from "./AddminRouter";
-import SellerRouter from "./SellerRouter";
+
 
 export const router= createBrowserRouter([
  {
@@ -84,6 +84,7 @@ export const router= createBrowserRouter([
            element:<MyProducts></MyProducts>,
            
         },
+        
     ]
    }
    

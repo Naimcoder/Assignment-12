@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
 import login  from '../../../image/login.gif'
 const Login = () => {
+
   const { signIn, signInWithGoogle, passwordReset } = useContext(AuthContext);
   const {
     register,
@@ -17,6 +18,7 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
+  
   const handleLoginSubmit = (data) => {
     console.log(data);
     signIn(data.email, data.password)

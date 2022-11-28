@@ -5,7 +5,6 @@ import { FaGoogle } from "react-icons/fa";
 import {  Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
 import signup from "../../../image/login.gif";
-import SmallSpnner from "../SmallSpnner/SmallSpnner";
 
 const Register = () => {
   const { createUser, updateName, user, loader, setLoader, signInWithGoogle} =
@@ -19,6 +18,8 @@ const Register = () => {
   const location =useLocation();
   const from = location.state?.from?.pathname || "/"
 
+
+// handleSubmit 
   const handleRegisetSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password)
@@ -39,6 +40,7 @@ const Register = () => {
       });
   };
 
+  // handlegoogle
   const handleGoogle=()=>{
     signInWithGoogle()
     .then((result)=>{
@@ -62,7 +64,7 @@ const Register = () => {
     })
     .catch(error=>console.log(error))
   }
-
+// saveUser data 
   const saveUser=(name,email,role)=>{
     const user= {name,email,role}
     fetch(`http://localhost:8000/users`,{

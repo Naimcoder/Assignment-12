@@ -24,7 +24,7 @@ const AllUser = () => {
      
   });
   
-
+// handlemake Admin
   const handleMakeAdmin = id => {
     fetch(`http://localhost:8000/users/admin/${id}`, {
       method: 'PATCH', 
@@ -36,6 +36,7 @@ const AllUser = () => {
         refetch();
     }
     })}
+    // handleDeleted
     const handleDelete=(id)=>{
         fetch(`http://localhost:8000/users/admin/${id}`,{
             method:"DELETE",
@@ -47,7 +48,7 @@ const AllUser = () => {
             refetch()
         })
        }
-
+// handleVerifyed
   const handleVerifyed=(id)=>{
    fetch(`http://localhost:8000/users/verifyed/${id}`,{
     method:"PATCH",
@@ -82,7 +83,7 @@ const AllUser = () => {
           </thead>
           <tbody>
             {useBuyer.map((users, i) => (
-              <tr>
+              <tr key={users._id}>
                 <th>{i + 1}</th>
                 <td className='flex items-center'>{users.name} 
                 <span className='ml-2 font-semibold'>{users?.verifyed ? <span className="text-blue-600"><FaCheckCircle/></span> : 'Not verify'}

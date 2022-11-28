@@ -1,12 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../Context/UseContext";
-import SmallSpnner from "../SmallSpnner/SmallSpnner";
-
 
 
 const AddProducts = () => {
-  const [loading,setLoading]=useState(true)
  const {user}=useContext(AuthContext)
 
   const handleProduct = (event) => {
@@ -69,8 +66,11 @@ const AddProducts = () => {
      
   })
     })
-
   };
+
+
+
+
   return (
     <div className="lg:w-2/4 container mx-auto p-10 bg-slate-400 my-20">
       <h3 className="text-3xl">ADD A PRODUCTS</h3>

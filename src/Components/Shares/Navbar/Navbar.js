@@ -172,6 +172,16 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
+                        to="/blog"
+                        aria-label="Our product"
+                        title="Our product"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      >
+                        Blog
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
                         to="/categories"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
